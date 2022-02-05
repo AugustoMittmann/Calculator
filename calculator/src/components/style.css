@@ -7,7 +7,6 @@ body {
   border-radius: 10px;
   display: grid;
   grid-template-rows: 120px 299px;
-  grid-gap: 10px;
   overflow: hidden;
   width: 300px;
 }
@@ -20,13 +19,22 @@ body {
   text-align: center;
 }
 .topButton {  background: #4C4A51;  }
-.topButton:hover {  background: rgba(255, 255, 255, 0.15);}
+.topButton:hover {  
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
 
 .numberButton {  background: #7e7c82; }
-.numberButton:hover {  background: rgba(255, 255, 255, 0.3);}
+.numberButton:hover {  
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
 
 .sideButton {  background: #ff9f0a; }
-.sideButton:hover {  background: rgba(255, 159, 10, 0.9);}
+.sideButton:hover {
+  background: rgba(255, 159, 10, 0.9);
+  cursor: pointer;
+}
 
 .button {
   display: grid;
@@ -60,17 +68,19 @@ body {
 
 
 .display {
-  font-size: 60px;
+  font-size: 62px;
   font-weight: 300;
   color: #fff;
   display: grid;
   grid-template-rows: 20px 1fr;
+  grid-template-columns: 25px 1fr;
   max-width: 300px;
-  overflow-y: auto;
 }
 .topBar {
   display: inline-flex;
-  margin: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  grid-column: 1/ span 2;
 }
 .topBall {
   margin: 0px 4px;
@@ -82,12 +92,25 @@ body {
 .yellowBall {background: #FEBC2E;}
 .greenBall {background: #28C840;}
 
-
-.numberDisplay {
-  margin: 0px 10px;
-  text-align: end;
+.dashes {
+  display: grid;
+  grid-template-rows: repeat(3, 8px);
+  font-size: 50px;
+  margin: 0px 5px;
+  align-content: flex-start;
+}
+.dash {
+  display: grid;
+  align-content: flex-start;
+  font-size: 25px;
 }
 
+
+.numberDisplay {
+  margin-left: 5px;
+  text-align: end;
+  overflow-y: auto;
+}
 ::-webkit-scrollbar {
   background-color: #3B3940;
 }
@@ -96,4 +119,19 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #7e7c82;
+}
+
+
+.historic {
+  width: 230px;
+  height: 392px;
+  position: absolute;
+  top: 35px;
+  border-radius: 10px;
+  overflow-x: auto;
+  transition: 1s;
+}
+
+.dash {
+  color: #fff;
 }

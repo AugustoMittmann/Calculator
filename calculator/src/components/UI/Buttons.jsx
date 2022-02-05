@@ -12,6 +12,7 @@ const Buttons = ({changeDisplay}) => {
   * 3 -> multiplication
   * 4 -> division
   */
+ const [history, setHistory] = useState([])
 
   function ac() {
     setCurrentValue(0)
@@ -166,10 +167,6 @@ const Buttons = ({changeDisplay}) => {
       setOperation(0)
     }
   }
-
-console.log('op: ' + operation)
-console.log('old: ' + oldValue)
-console.log('current: ' + currentValue)
 
   changeDisplay(display)
   return (
