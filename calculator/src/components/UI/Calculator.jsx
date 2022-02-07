@@ -14,26 +14,13 @@ function Calculator ({}) {
   function changeDisplay(value) {
     setCurrentValue(value)
   }
-
-  function onMouseEnter() {
-    setShowHistory(true)
-  }
-  function onMouseDown() {
-    setShowHistory(false)
-    console.log('weq');
-  }
   
   return (
     <>
       <section className="container">
-        <Display setDisplay={currentValue} onMouseEnter={onMouseEnter} onMouseDown={onMouseDown}/>
+        <Display setDisplay={currentValue} />
         <Buttons changeDisplay={changeDisplay} />
       </section>
-      {
-        showHistory === true ?
-        <Historic /> :
-        null
-      }
     </>
   )
 }

@@ -96,7 +96,7 @@ const Buttons = ({changeDisplay}) => {
   }
 
   function multiplication() {
-    if(operation === 0) {
+    if(operation === 0) { //no operation setted 
       if(oldValue !== 0) {
         setOldValue(parseFloat(oldValue))
         setDisplay(parseFloat(oldValue))
@@ -109,9 +109,11 @@ const Buttons = ({changeDisplay}) => {
         setOperation(3) //set multiplication
       }
     }  else if(operation === 3) {
-      setDisplay(parseFloat(oldValue) * parseFloat(currentValue))
-      setOldValue(parseFloat(oldValue) * parseFloat(currentValue))
-      setCurrentValue(0)
+      if(currentValue !== 0) {  //if click two times
+        setDisplay(parseFloat(oldValue) * parseFloat(currentValue))
+        setOldValue(parseFloat(oldValue) * parseFloat(currentValue))
+        setCurrentValue(0)
+      }
     } else {
       equal()
       setOperation(3)
@@ -131,10 +133,12 @@ const Buttons = ({changeDisplay}) => {
         setCurrentValue(0)
         setOperation(4) //set division
       }
-    }  else if(operation === 3) {
-      setDisplay(parseFloat(oldValue) / parseFloat(currentValue))
-      setOldValue(parseFloat(oldValue) / parseFloat(currentValue))
-      setCurrentValue(0)
+    }  else if(operation === 4) {
+      if(currentValue !== 0) {  //if click two times
+        setDisplay(parseFloat(oldValue) / parseFloat(currentValue))
+        setOldValue(parseFloat(oldValue) / parseFloat(currentValue))
+        setCurrentValue(0)
+      }
     } else {
       equal()
       setOperation(4)

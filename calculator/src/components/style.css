@@ -73,7 +73,7 @@ body {
   color: #fff;
   display: grid;
   grid-template-rows: 20px 1fr;
-  grid-template-columns: 25px 1fr;
+  grid-template-columns: 1fr;
   max-width: 300px;
 }
 .topBar {
