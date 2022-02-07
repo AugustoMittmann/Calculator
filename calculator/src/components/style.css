@@ -20,7 +20,7 @@ body {
   transition: 1s;
   padding: 10px;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   grid-auto-rows: 20px;
 }
 .historic:hover {
