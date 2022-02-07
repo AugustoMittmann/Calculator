@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Buttons = ({changeDisplay}) => {
+const Buttons = ({changeDisplay, changeHistory}) => {
   const numberButtons = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '.'] //Layout
   const [currentValue, setCurrentValue] = useState(0)
   const [oldValue, setOldValue] = useState(0)
@@ -33,7 +33,7 @@ const Buttons = ({changeDisplay}) => {
       setDisplay(parseFloat(currentValue)*(-1))
     }
   }
-
+  
   function numberClick(value) {  //on click numbers
     setCurrentValue(currentValue => currentValue+value)
     
@@ -63,26 +63,33 @@ const Buttons = ({changeDisplay}) => {
       if(operation === 1) { //sum
         setDisplay(parseFloat(oldValue) + parseFloat(currentValue))
         setOldValue(parseFloat(oldValue) + parseFloat(currentValue))
+        changeHistory({oldValue, operation, currentValue})
       }
       if(operation === 2) { //subtration
         setDisplay(parseFloat(oldValue) - parseFloat(currentValue))
         setOldValue(parseFloat(oldValue) - parseFloat(currentValue))
+        changeHistory({oldValue, operation, currentValue})
       }
       if(operation === 3) { //multiplication
         setDisplay(parseFloat(oldValue) * parseFloat(currentValue))
         setOldValue(parseFloat(oldValue) * parseFloat(currentValue))
+        changeHistory({oldValue, operation, currentValue})
       }
       if(operation === 4) { //division
         setDisplay(parseFloat(oldValue) / parseFloat(currentValue))
         setOldValue(parseFloat(oldValue) / parseFloat(currentValue))
+        changeHistory({oldValue, operation, currentValue})
       }
     }
     
     setCurrentValue(0)
     setOperation(nextOperation)
+    
   }
   
-  changeDisplay(display)
+  useEffect(() => {
+    changeDisplay(display)
+  })
 
   return (
     <>
@@ -90,7 +97,7 @@ const Buttons = ({changeDisplay}) => {
       <div className="button topButton" onClick={() => ac()}>AC</div>
       <div className="button topButton" onClick={() => plusLess()}>+/-</div>
       <div className="button topButton">%</div>
-      <div className="button sideButton buttonDiv"onClick={() => equal(4)}>÷</div>
+      <div className="button sideButton buttonDiv" onClick={() => equal(4)}>÷</div>
       <div className="button sideButton buttonMult" onClick={() => equal(3)}>X</div>
       <div className="button sideButton buttonSub" onClick={() => equal(2)}>-</div>
       <div className="button sideButton buttonSum" onClick={() => equal(1)}>+</div>
