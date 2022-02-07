@@ -7,8 +7,6 @@ import '../style.css'
 
 function Calculator ({}) {
 
-  const [showHistory, setShowHistory] = useState(false)
-
   const [currentValue, setCurrentValue] = useState(0)
 
   function changeDisplay(value) {
