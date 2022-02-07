@@ -6,6 +6,27 @@ body {
   background-attachment: fixed;
 }
 
+
+.historic {
+  display: grid;
+  position: absolute;
+  height: 400px;
+  width: 000px;
+  top: 50px;
+  left: 358px;
+  background-color: #3B3940;
+  color: #3B3940;
+  border-radius: 10px;
+  transition: 1s;
+  padding: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  grid-auto-rows: 20px;
+}
+.historic:hover {
+  width: 200px;
+  color: #fff;
+}
 .container {
   background: #3B3940;
   border-radius: 10px;
@@ -13,6 +34,7 @@ body {
   grid-template-rows: 120px 299px;
   overflow: hidden;
   width: 300px;
+  margin: 50px;
 }
 
 .buttons {
@@ -128,17 +150,6 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #7e7c82;
-}
-
-
-.historic {
-  width: 230px;
-  height: 392px;
-  position: absolute;
-  top: 35px;
-  border-radius: 10px;
-  overflow-x: auto;
-  transition: 1s;
 }
 
 .dash {
