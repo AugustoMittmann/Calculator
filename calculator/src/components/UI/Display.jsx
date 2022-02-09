@@ -1,6 +1,6 @@
 import React from "react";
 
-const Display = ({setDisplay, onMouseEnter, onMouseDown}) => {
+const Display = ({valueDisplay}) => {
 
   return (
   <>
@@ -10,8 +10,7 @@ const Display = ({setDisplay, onMouseEnter, onMouseDown}) => {
           <div className="topBall yellowBall"></div>
           <div className="topBall greenBall"></div>
         </div>
-        <div className="dash" onMouseEnter={onMouseEnter} onMouseDown={onMouseDown} >☰</div>
-        <div className="numberDisplay">{setDisplay}</div>
+        <div className="numberDisplay">{valueDisplay}</div>
       </div>
   </>
   )
