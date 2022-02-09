@@ -29,11 +29,6 @@ function Calculator ({}) {
         <Display setDisplay={currentValue} onMouseEnter={onMouseEnter} onMouseDown={onMouseDown}/>
         <Buttons changeDisplay={changeDisplay} />
       </section>
-      {
-        showHistory === true ?
-        <Historic /> :
-        null
-      }
     </>
   )
 }
