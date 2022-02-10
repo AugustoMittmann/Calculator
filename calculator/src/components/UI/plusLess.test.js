@@ -1,4 +1,4 @@
-const { plusLessCalc } = require('./plusLess')
+import { plusLessCalc } from './plusLess'
 
 /*  +- */
 

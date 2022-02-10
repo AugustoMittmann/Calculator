@@ -26,15 +26,19 @@ function Calculator () {
       setDisplay(parseFloat(currentValue))  //keep display with currentValue until a number click 
       setOldValue(parseFloat(currentValue)) //save in the memory the currentValue
     }
-
     if(oldValue !== 0) {
-      const result = calculos(oldValue, currentValue, operation)
-      setDisplay(result)
-      setOldValue(result)
-      setHistory(history => [...history, {oldValue, operation, currentValue}])  
+      if(currentValue === 0) {  //if click 2 times at "X" or "/"
+        setDisplay(oldValue)
+        setOldValue(oldValue)
+      } else {
+        const result = calculos(oldValue, currentValue, operation)
+        setDisplay(result)
+        setOldValue(result)
+        setHistory(history => [...history, {oldValue, operation, currentValue}])
+      }
     }
     
-    setCurrentValue(0)
+    setCurrentValue(0)  
     setOperation(nextOperation)
   }
 

@@ -1,4 +1,4 @@
-const { calculos } = require ('./calcs.js')
+import { calculos } from './calcs.js'
 
 /*  OPERATION
  * 1 - sum 
