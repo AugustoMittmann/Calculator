@@ -4,6 +4,7 @@ import Display from "./Display";
 import Historic from "./Historic";
 import '../style.css'
 const { calculos } = require('./calcs')
+const { plusLessCalc } = require('./plusLess')
 
 function Calculator () {
 
@@ -22,17 +23,15 @@ function Calculator () {
   
   const calcs = (nextOperation) => {
     if(operation === 0) {
-      setDisplay(parseFloat(currentValue))
-      setOldValue(parseFloat(currentValue))
+      setDisplay(parseFloat(currentValue))  //keep display with currentValue until a number click 
+      setOldValue(parseFloat(currentValue)) //save in the memory the currentValue
     }
 
     if(oldValue !== 0) {
-      console.log('eita');
-        const result = calculos(oldValue, currentValue, operation)
-        setDisplay(result)
-        setOldValue(result)
-        console.log(result);
-        setHistory(history => [...history, {oldValue, operation, currentValue}])  
+      const result = calculos(oldValue, currentValue, operation)
+      setDisplay(result)
+      setOldValue(result)
+      setHistory(history => [...history, {oldValue, operation, currentValue}])  
     }
     
     setCurrentValue(0)
@@ -65,18 +64,23 @@ function Calculator () {
   }
 
   function plusLess(){ //on click +/-
-    if(operation === 0 && currentValue === 0) {
-      setOldValue(parseFloat(oldValue)*(-1))
-      setCurrentValue(parseFloat(oldValue)*(-1))
-      setDisplay(parseFloat(oldValue)*(-1))
-    } else if(currentValue === 0){
-      setCurrentValue('-')
-      setDisplay('-')
+    if(currentValue === 0) {
+      if(operation === 0) {
+        const result = plusLessCalc(oldValue)
+        setOldValue(result)
+        setCurrentValue(result)
+        setDisplay(result)
+      } else {
+        setCurrentValue('-')
+        setDisplay('-')
+      }
     } else {
-      setCurrentValue(parseFloat(currentValue)*(-1))
-      setDisplay(parseFloat(currentValue)*(-1))
+      const result = plusLessCalc(currentValue)
+      setCurrentValue(result)
+      setDisplay(result)
     }
   }
+
 
   useEffect(() => {
     setValueDisplay(display)
