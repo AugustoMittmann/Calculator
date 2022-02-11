@@ -1,7 +1,32 @@
 body {
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: url('https://macmagazine.com.br/wp-content/uploads/2021/09/18-conjuntos-mac.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 
+
+.historic {
+  display: grid;
+  position: absolute;
+  height: 400px;
+  width: 000px;
+  top: 50px;
+  left: 358px;
+  background-color: #3B3940;
+  color: #3B3940;
+  border-radius: 10px;
+  transition: 1s;
+  padding: 10px;
+  overflow: hidden;
+  overflow-y: auto;
+  grid-auto-rows: 20px;
+}
+.historic:hover {
+  width: 200px;
+  color: #fff;
+}
 .container {
   background: #3B3940;
   border-radius: 10px;
@@ -9,6 +34,7 @@ body {
   grid-template-rows: 120px 299px;
   overflow: hidden;
   width: 300px;
+  margin: 50px;
 }
 
 .buttons {
@@ -18,6 +44,7 @@ body {
   grid-gap: 1px;
   text-align: center;
 }
+
 .topButton {  background: #4C4A51;  }
 .topButton:hover {  
   background: rgba(255, 255, 255, 0.15);
@@ -30,7 +57,11 @@ body {
   cursor: pointer;
 }
 
-.sideButton {  background: #ff9f0a; }
+.sideButton {  
+  background: #ff9f0a;
+}
+
+
 .sideButton:hover {
   background: rgba(255, 159, 10, 0.9);
   cursor: pointer;
@@ -119,17 +150,6 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #7e7c82;
-}
-
-
-.historic {
-  width: 230px;
-  height: 392px;
-  position: absolute;
-  top: 35px;
-  border-radius: 10px;
-  overflow-x: auto;
-  transition: 1s;
 }
 
 .dash {

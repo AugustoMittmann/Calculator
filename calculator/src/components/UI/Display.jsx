@@ -1,6 +1,6 @@
 import React from "react";
 
-const Display = ({setDisplay}) => {
+const Display = ({valueDisplay}) => {
 
   return (
   <>
@@ -10,7 +10,7 @@ const Display = ({setDisplay}) => {
           <div className="topBall yellowBall"></div>
           <div className="topBall greenBall"></div>
         </div>
-        <div className="numberDisplay">{setDisplay}</div>
+        <div className="numberDisplay">{valueDisplay}</div>
       </div>
   </>
   )
